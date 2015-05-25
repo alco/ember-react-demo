@@ -4,17 +4,42 @@
 <hr/>
 
 <ul id="filters">
-    <li>
-        {{#link-to "ember-data" activeClass="selected"}}Ember + Ember Data{{/link-to}}
-    </li>
-    <li>
-        {{#link-to "ember" activeClass="selected"}}Ember{{/link-to}}
-    </li>
-    <li>
-        {{#link-to "react" activeClass="selected"}}React{{/link-to}}
-    </li>
+  <li>{{#link-to "ember-data" activeClass="selected"}}Ember + Ember Data{{/link-to}}</li>
+  <li>{{#link-to "ember" activeClass="selected"}}Ember{{/link-to}}</li>
+  <li>{{#link-to "react" activeClass="selected"}}React{{/link-to}}</li>
 </ul>
 
 <hr/>
   
-{{outlet}}
+<div style="width:600px; float:right;">
+  <table border=1>
+    <tr>
+      <td></td>
+      <td>Add Many Items time, s</td>
+      <td>Remove All Items time, s</td>
+      <td>Remove Single Item time, s</td>
+    </tr>
+    <tr>
+      <td>Ember + Ember Data</td>
+      <td>{{routeTimings.ember-data.addMany}}</td>
+      <td>{{routeTimings.ember-data.removeAll}}</td>
+      <td>{{routeTimings.ember-data.removeSingle}}</td>
+    </tr>
+    <tr>
+      <td>Ember</td>
+      <td>{{routeTimings.ember.addMany}}</td>
+      <td>{{routeTimings.ember.removeAll}}</td>
+      <td>{{routeTimings.ember.removeSingle}}</td>
+    </tr>
+    <tr>
+      <td>React</td>
+      <td>{{routeTimings.react.addMany}}</td>
+      <td>{{routeTimings.react.removeAll}}</td>
+      <td>{{routeTimings.react.removeSingle}}</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  {{outlet}}
+</div>

@@ -22,6 +22,9 @@ export default Ember.Object.extend({
   },
 
   removeItem: function(itemId) {
+    this.timestamp = Date.now();
+    this.timingName = 'removeSingle';
+
     var item = this.itemsById[itemId],
         index = this.items.indexOf(item);
     if (index > -1) {
@@ -39,6 +42,9 @@ export default Ember.Object.extend({
   },
 
   clearItems: function() {
+    this.timestamp = Date.now();
+    this.timingName = 'removeAll';
+
     this.items = [];
     this.itemsById = {};
     if (this.handler) { this.handler(); }

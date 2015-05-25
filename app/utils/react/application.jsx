@@ -1,6 +1,16 @@
 import Item from 'many-components-ember/utils/react/item';
+import globalTimings from 'many-components-ember/utils/global-timings';
 
 export default React.createClass({
+  componentDidUpdate: function() {
+    // A hacky way to measure the perceived duration of different operations
+    if (this.props.store.timestamp) {
+      var timing = Date.now() - this.props.store.timestamp;
+      globalTimings.addTiming('react', this.props.store.timingName, timing / 1000);
+      this.props.store.timestamp = null;
+    }
+  },
+
   handleItemChange(itemId, color, width) {
     this.props.store.changeItem(itemId, color, width);
   },
@@ -14,6 +24,9 @@ export default React.createClass({
   },
 
   addManyItems() {
+    this.props.store.timestamp = Date.now();
+    this.props.store.timingName = 'addMany';
+
     for (var i = 0; i < 1000; i++) {
       this.addItem();
     }
