@@ -318,6 +318,10 @@ define('many-components-ember/router', ['exports', 'ember', 'many-components-emb
     location: config['default'].locationType
   });
 
+  Router.reopen({
+    rootURL: '/ember-react-demo/'
+  });
+
   Router.map(function () {
     this.route('ember-data');
     this.route('ember');
@@ -1342,7 +1346,7 @@ catch(err) {
 if (runningTests) {
   require("many-components-ember/tests/test-helper");
 } else {
-  require("many-components-ember/app")["default"].create({"name":"many-components-ember","version":"0.0.0.20e8840c"});
+  require("many-components-ember/app")["default"].create({"name":"many-components-ember","version":"0.0.0.4f18d3d4"});
 }
 
 /* jshint ignore:end */
