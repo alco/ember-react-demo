@@ -319,7 +319,7 @@ define('many-components-ember/router', ['exports', 'ember', 'many-components-emb
   });
 
   Router.reopen({
-    rootURL: '/ember-react-demo/'
+    rootURL: '/ember-react-demo/canary/'
   });
 
   Router.map(function () {
