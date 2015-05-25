@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   init: function() {
+    this._super.apply(this, arguments);
     this.genNewItem();
   },
 
@@ -31,7 +32,7 @@ export default Ember.Controller.extend({
       width: randomInt(200, 1000),
     });
     item.save();
-  }.on('activate'),
+  }
 });
 
 function randomInt(from, to) {

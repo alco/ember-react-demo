@@ -7,3 +7,8 @@
     margin: 10px 0px; 
     background: none 0% 0% repeat scroll;
 }
+
+a.selected {
+    text-decoration: none;
+    color: black;
+}

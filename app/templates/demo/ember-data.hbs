@@ -1,0 +1,9 @@
+<div>
+  <button {{action "newItem"}}>Add New Item</button><button {{action "addManyItems"}}>Add Many Items</button><button {{action "removeAllItems"}}>Remove All Items</button>
+</div>
+
+<div>
+  {{#each item in model}}
+    {{custom-item param=item color=item.color width=item.width removeClicked="removeItem"}}
+  {{/each}}
+</div>
