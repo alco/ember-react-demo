@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     return model;
   },
 
-  renderTemplate: function() {
-    this.render('ember');
+  renderTemplate: function(controller) {
+    this.render('ember', {controller: controller});
   },
 });

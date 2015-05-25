@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return this.store.findAll('item');
   },
 
-  renderTemplate: function() {
-    this.render('ember');
+  renderTemplate: function(controller) {
+    this.render('ember', {controller: controller});
   },
 });
