@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.reopen({
-    rootURL: '/ember-react-demo/canary/'
+    rootURL: '/ember-react-demo/1.12.0/'
 });
 
 Router.map(function() {
