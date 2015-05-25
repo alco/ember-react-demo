@@ -1346,7 +1346,7 @@ catch(err) {
 if (runningTests) {
   require("many-components-ember/tests/test-helper");
 } else {
-  require("many-components-ember/app")["default"].create({"name":"many-components-ember","version":"0.0.0.4f18d3d4"});
+  require("many-components-ember/app")["default"].create({"name":"many-components-ember","version":"0.0.0.a7bce97b"});
 }
 
 /* jshint ignore:end */
