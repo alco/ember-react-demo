@@ -1,53 +1,53 @@
 # Many-components-ember
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This app was built with Ember CLI 0.2.5.
 
-## Prerequisites
 
-You will need the following things properly installed on your computer.
+## Overview / disclaimer
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+This demo compares Ember and React when adding, changing, and removing a lot of elements on a single
+page. This is a synthetic benchmark that does something no real application will ever do. The
+purpose of this demo is to understand the reasons for one library showing more overhead than the
+other when using idiomatic approaches to building applications with each respective library.
 
-## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+## How it works
 
-## Running / Development
+The demo page has three sections, each one using a different Ember view to perform the same thing.
+When you click on "Add Many Items", 1000 more elements will be added to the page. You can change the
+color and the width of any element. Clicking on "Remove" will remove that element from the page.
+Clicking on "Remove All Items" will clear the page.
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+The section "Ember + Ember Data" uses `templates/ember.hbs` and Ember Data for storage.
 
-### Code Generators
+"Ember" uses the same template but has a simple array as its model.
 
-Make use of the many generators for code, try `ember help generate` for more details
+"React" uses `templates/react.hbs` to create a div which it then gives to React which will then
+perform all of the rendering and event handling in it. This is basically an embedded version of the
+original [React demo](http://binarymuse.github.io/react-primer/build/index.html?6).
 
-### Running Tests
 
-* `ember test`
-* `ember test --server`
+## What is shows
 
-### Building
+When you have 1000 elements on the page, you can see how changing an element's width or removing
+items becomes noticeably sluggish.
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+The table on the right side of the page should help you understand the relative performances between
+the different sections. Whenever you remove a single item, add many items, or remove all items, the
+table will show the time it took to perform those operations. By repeating those operations first
+with "Ember + Ember Data", then "Ember", and finally "React", you'll get a rough picture of the
+different performance characteristics each of them has.
 
-### Deploying
+Moreover, this demo also showcases the difference in performance between Ember 1.12.0 and Ember
+Canary. Check out the following pages to see a prebuilt version of each:
 
-Specify what it takes to deploy your app.
+  * http://alexeisholik.com/ember-react-demo/canary/
+  * http://alexeisholik.com/ember-react-demo/1.12.0/
 
-## Further Reading / Useful Links
 
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+## Feedback
 
+I have started a thread called "Synthetic benchmark: comparing Ember 1.12.0, Ember Canary, and
+React" on  Ember's discourse. Hoping to get knowledgeable people to share their insights into what
+is responsible for the overhead when doing a particular operation and if there's a way to mitigate
+it.
