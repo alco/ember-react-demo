@@ -5,6 +5,10 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
+Router.reopen({
+    rootURL: '/ember-react-demo/'
+});
+
 Router.map(function() {
   this.route('ember-data');
   this.route('ember');
