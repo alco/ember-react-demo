@@ -47,7 +47,6 @@ Canary. Check out the following pages to see a prebuilt version of each:
 
 ## Feedback
 
-I have started a thread called "Synthetic benchmark: comparing Ember 1.12.0, Ember Canary, and
-React" on  Ember's discourse. Hoping to get knowledgeable people to share their insights into what
-is responsible for the overhead when doing a particular operation and if there's a way to mitigate
-it.
+I have started a thread called ["Synthetic benchmark: comparing Ember 1.12.0, Ember Canary, and
+React"](http://discuss.emberjs.com/t/synthetic-benchmark-comparing-ember-1-12-0-ember-canary-and-react/8077) on  Ember's discourse. Hoping to get knowledgeable people to share their insights into what is
+responsible for the overhead when doing a particular operation and if there's a way to mitigate it.
