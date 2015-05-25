@@ -7,7 +7,7 @@ module.exports = function(environment) {
     },
     modulePrefix: 'many-components-ember',
     environment: environment,
-    baseURL: '/ember-react-demo',
+    baseURL: '/ember-react-demo/canary',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {
