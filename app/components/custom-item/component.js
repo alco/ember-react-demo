@@ -2,7 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   myStyle: function() {
-    return ("background-color: " + this.get('color') + "; width: " + this.get('width') + "px").htmlSafe();
+    return (
+      "background-color: " + this.get('color') + "; " + "width: " + this.get('width') + "px"
+    ).htmlSafe();
   }.property('color', 'width'),
 
   actions: {

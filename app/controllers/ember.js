@@ -3,9 +3,12 @@ import genNewItem from 'many-components-ember/utils/gen-new-item';
 
 export default Ember.Controller.extend({
   actions: {
+    // Sent by the custom-item component
     removeItem: function(item) {
       this.get('model').removeObject(item);
     },
+
+    // Sent by the buttons in templates/demo.hbs
     newItem: function() {
       this.genNewItem();
     },

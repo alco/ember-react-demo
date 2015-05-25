@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import genNewItem from 'many-components-ember/utils/gen-new-item';
 
 export default Ember.Controller.extend({
   init: function() {
@@ -7,10 +8,13 @@ export default Ember.Controller.extend({
   },
 
   actions: {
+    // Sent by the custom-item component
     removeItem: function(item) {
       item.deleteRecord();
       item.save();
     },
+
+    // Sent by the buttons in templates/demo.hbs
     newItem: function() {
       this.genNewItem();
     },
@@ -27,23 +31,7 @@ export default Ember.Controller.extend({
   },
 
   genNewItem: function() {
-    var item = this.store.createRecord('item', {
-      color: '#' + randomHex(6),
-      width: randomInt(200, 1000),
-    });
+    var item = this.store.createRecord('item', genNewItem());
     item.save();
   }
 });
-
-function randomInt(from, to) {
-  return from + Math.floor(Math.random() * (to - from + 1));
-}
-
-function randomHex(ndigits) {
-  var string = "";
-  for (var i = 0; i < ndigits; i++) {
-    string += "0123456789ABCDEF".charAt(randomInt(0, 15));
-  }
-  return string;
-}
-

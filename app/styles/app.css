@@ -11,4 +11,6 @@
 a.selected {
     text-decoration: none;
     color: black;
+    font-weight: bold;
+    font-size: larger;
 }

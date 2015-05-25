@@ -6,11 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('demo', {path: '/'}, function() {
-    this.route('ember-data');
-    this.route('ember');
-    this.route('react');
-  });
+  this.route('ember-data');
+  this.route('ember');
+  this.route('react');
 });
 
 export default Router;

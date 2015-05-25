@@ -6,5 +6,9 @@ var model = [genNewItem()];
 export default Ember.Route.extend({
   model: function() {
     return model;
-  }
+  },
+
+  renderTemplate: function() {
+    this.render('ember');
+  },
 });
