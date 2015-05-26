@@ -5,7 +5,7 @@
 </div>
 
 <div>
-  {{#each item in model}}
+  {{#each model as |item|}}
     {{custom-item param=item color=item.color width=item.width removeClicked="removeItem"}}
   {{/each}}
 </div>
