@@ -32,12 +32,6 @@ original [React demo](http://binarymuse.github.io/react-primer/build/index.html?
 When you have 1000 elements on the page, you can see how changing an element's width or removing
 items becomes noticeably sluggish.
 
-The table on the right side of the page should help you understand the relative performances between
-the different sections. Whenever you remove a single item, add many items, or remove all items, the
-table will show the time it took to perform those operations. By repeating those operations first
-with "Ember + Ember Data", then "Ember", and finally "React", you'll get a rough picture of the
-different performance characteristics each of them has.
-
 Moreover, this demo also showcases the difference in performance between Ember 1.12.0 and Ember
 Canary. Check out the following pages to see a prebuilt version of each:
 
